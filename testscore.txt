@@ -1,0 +1,33 @@
+#include <stdio.h>
+#pragma warning (disable : 4996)
+
+int mainscore(void)
+{
+	int num;//학생 수
+	int big, small; //가장 큰 점수, 작은 점수
+	int score[100];//점수
+	int i;
+	printf("입력하실 학생 수를 입력해주세요 : ");
+	scanf("%d", &num);
+	for (i = 0;i < num;i++)
+	{
+		printf("%d번째 학생의 점수 : ", i + 1);
+		scanf("%d", &score[i]);
+	}
+	big = score[0]; //일단 score[0]번째로 big 선언
+	small = score[0]; //일단 socre[0]번째로 small 선언
+
+	for (i = 1;i < num;i++)
+	{
+		if (big < score[i]) //big이 score[i]보다 작을 때
+		{
+			big = score[i]; //big을 socre[i]로 바꿔줌
+		}
+		if (small > score[i]) //small이 score[i]보다 클 때
+		{
+			small = score[i]; // small을 score[i]로 바꿔줌
+		}
+	}
+	printf("1등 점수 : %d, 꼴등 점수 : %d", big, small);
+	return 0;
+}
