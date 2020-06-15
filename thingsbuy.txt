@@ -1,0 +1,30 @@
+#include <stdio.h>
+#pragma warning (disable : 4996)
+
+int main(void)
+{
+	int putpri;//가격
+	int things; //갯수
+	int price; //총 가격
+	printf("구매하려는 물품의 갯수를 입력해주세요 : ");
+	scanf("%d", &things);
+	printf("구매하려는 물품의 가격을 입력해주세요 : ");
+	scanf("%d", &putpri);
+
+	if (things >= 10)
+	{
+		price = things * putpri * 0.9;// 10% 할인
+
+		if (things >= 100)
+		{
+			price = things * putpri * 0.88; //12% 할인
+		}
+	}
+	else
+	{
+		price = things * putpri;
+	}
+	printf("물건 %d개를 구매하기 위해서 %d원이 필요합니다.", things, price);
+
+	return 0;
+}
