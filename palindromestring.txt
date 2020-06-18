@@ -1,0 +1,35 @@
+//팰린드롬수, 문자버전 ( 앞에서 읽었을때와 뒤에서 읽었을 때 같은 수 == 펠린드롬수)
+#include <stdio.h>
+#pragma warning (disable : 4996)
+
+int main(void)
+{
+	char str[100] = { "" };
+	int len = 0;//입력한 길이
+	int i;
+	int cnt = 0;
+
+	gets(str);//입력
+	while (str[len] != '\0') //입력한 길이 구하기
+	{
+		len++;
+	}
+	for (i = 0;i <= len / 2;i++) 
+	{
+		if (str[i] == str[len-i-1]) //i번째와 len-i-1번째에 있는 문자가 같으면(-1인 이유 : 배열은 0부터 시작)
+		{
+			cnt++;
+		}
+		else //아니라면 no 출력
+		{
+			printf("no");
+			break;
+		}
+		
+		if (cnt == len / 2 + 1)
+		{
+			printf("yes");
+		}
+	}
+	return 0;
+}
