@@ -1,0 +1,35 @@
+//카드 n개 중 한개가 없어져서 없어진 카드가 어떤건지 찾는 문제
+#pragma warning (disable : 4996)
+#include <stdio.h>
+
+int main(void)
+{
+	int n; //카드 총 갯수
+	int card[100] = { "" }; //카드 배열
+	int i;
+	int check = 0; //있었는지 없었는지 체크
+
+	printf("카드 총 갯수를 입력해주세요 : ");
+	scanf("%d", &n);
+	for (i = 0;i < n - 1;i++) //입력
+	{
+		scanf("%d", &card[i]);
+	}
+	for (i = 1; i <= n;i++)
+	{
+		check = 0;
+		for (int j = 0;j <= n - 1;j++)
+		{
+			if (card[j] == i)
+			{
+				check++;
+			}
+		}
+		if (check != 1) //1번도 나오지 않았다면 출력
+		{
+			printf("사라진 카드는 %d 입니다.", i);
+			break;
+		}
+	}
+	return 0;
+}
