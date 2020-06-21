@@ -1,0 +1,31 @@
+//괄호 갯수(닫는 괄호와 여는 괄호의 갯수를 세아림)
+#include <stdio.h>
+#pragma warning (disable : 4996)
+
+int main(void)
+{
+	char str[100];
+	int i, j;
+	int len = 0;
+	int right = 0; // )
+	int left = 0; // (
+	gets(str);
+
+	for (i = 0;str[i] != '\0';i++)
+	{
+		len++;
+	}
+	for (i = 0;i < len;i++)
+	{
+		if (str[i] == '(')
+		{
+			left++;
+		}
+		else if (str[i] == ')')
+		{
+			right++;
+		}
+	}
+	printf("( 갯수 : %d\n )갯수 : %d", left, right);
+	return 0;
+}
