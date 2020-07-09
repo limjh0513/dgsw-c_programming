@@ -1,0 +1,24 @@
+//이름에 O가 몇번 들어가는지
+#include <stdio.h>
+#pragma warning (disable : 4996)
+
+int main(void)
+{
+	char name[100]; //이름
+	int i; //for문
+	int o = 0; //o가 몇번 들어가는지
+
+	printf("이름을 입력하세요 : ");
+	gets(name); //이름 입력
+
+	for (i = 0; name[i] != '\0'; i++) //name[i]가 \0이 아닐 때 까지
+	{
+		if (name[i] == 'O' || name[i] == 'o') //name[i]가 o 또는 O라면
+		{
+			o++; //o에 +1을 해줌
+		}
+	}
+	printf("%d\n", o); //출력
+
+	return 0;
+}
